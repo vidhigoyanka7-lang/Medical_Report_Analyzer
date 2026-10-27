@@ -1,0 +1,17 @@
+{
+  "name": "mediguide-ai",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n backend,frontend,biobert -c blue,green,magenta \"npm --prefix backend start\" \"npm --prefix frontend run dev\" \"python_ai_service\\.venv\\Scripts\\python.exe python_ai_service\\main.py\"",
+    "dev:no-ai": "concurrently -n backend,frontend -c blue,green \"npm --prefix backend start\" \"npm --prefix frontend run dev\"",
+    "setup": "npm --prefix backend install && npm --prefix frontend install && npm --prefix backend run initdb",
+    "test": "npm --prefix backend test"
+  },
+  "dependencies": {
+    "pdf-parse": "^2.4.5",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

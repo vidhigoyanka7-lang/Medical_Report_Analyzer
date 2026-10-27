@@ -1,0 +1,288 @@
+[
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Hemoglobin Test",
+    "topic": "Lab test",
+    "parameter": "Hemoglobin",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/hemoglobin-test/",
+    "aliases": [
+      "hemoglobin",
+      "hb",
+      "hgb",
+      "haemoglobin"
+    ],
+    "text": "Hemoglobin is a protein in red blood cells that carries oxygen around the body. A hemoglobin test measures how much of it is in the blood. Results below or above the reference range can have many different causes, so they are best interpreted by a healthcare professional together with other tests."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Hematocrit Test",
+    "topic": "Lab test",
+    "parameter": "Hematocrit",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/hematocrit-test/",
+    "aliases": [
+      "hematocrit",
+      "hct",
+      "pcv",
+      "packed cell volume"
+    ],
+    "text": "Hematocrit is the percentage of the blood volume made up of red blood cells. It is usually read together with hemoglobin and the red blood cell count."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Blood Glucose Test",
+    "topic": "Lab test",
+    "parameter": "Blood Glucose",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+    "aliases": [
+      "glucose",
+      "blood glucose",
+      "random blood glucose",
+      "fasting glucose",
+      "fbs",
+      "rbs",
+      "blood sugar"
+    ],
+    "text": "A blood glucose test measures the amount of sugar (glucose) in the blood. The result depends on factors such as whether you have recently eaten, which is why reports often state if the sample was fasting or random."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Cholesterol Levels",
+    "topic": "Lab test",
+    "parameter": "Total Cholesterol",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+    "aliases": [
+      "cholesterol",
+      "total cholesterol",
+      "ldl",
+      "hdl",
+      "vldl",
+      "lipid"
+    ],
+    "text": "Cholesterol tests measure fats in the blood, usually total cholesterol, LDL, HDL and triglycerides. They are used to estimate heart and blood-vessel risk together with other factors, and a doctor interprets them in context."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Triglycerides Test",
+    "topic": "Lab test",
+    "parameter": "Triglycerides",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/triglycerides-test/",
+    "aliases": [
+      "triglycerides",
+      "tg"
+    ],
+    "text": "Triglycerides are a type of fat in the blood. The test is often part of a lipid panel."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Creatinine Test",
+    "topic": "Lab test",
+    "parameter": "Creatinine",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/creatinine-test/",
+    "aliases": [
+      "creatinine",
+      "serum creatinine"
+    ],
+    "text": "Creatinine is a waste product made by muscles and removed by the kidneys. Blood creatinine is used as one way to check how well the kidneys are working."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "BUN (Blood Urea Nitrogen) Test",
+    "topic": "Lab test",
+    "parameter": "Blood Urea",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/bun-blood-urea-nitrogen/",
+    "aliases": [
+      "urea",
+      "blood urea",
+      "bun",
+      "blood urea nitrogen"
+    ],
+    "text": "Urea nitrogen is a waste product the kidneys remove from the blood. The test is used, along with other tests such as creatinine, to look at kidney function."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Bilirubin Blood Test",
+    "topic": "Lab test",
+    "parameter": "Bilirubin",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/bilirubin-blood-test/",
+    "aliases": [
+      "bilirubin",
+      "direct bilirubin",
+      "total bilirubin",
+      "indirect bilirubin"
+    ],
+    "text": "Bilirubin is a yellow substance made when red blood cells break down. The liver removes it from the body. The test is used to learn about liver and bile-duct function."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Calcium Blood Test",
+    "topic": "Lab test",
+    "parameter": "Calcium",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/calcium-blood-test/",
+    "aliases": [
+      "calcium",
+      "ionic calcium",
+      "serum calcium"
+    ],
+    "text": "Calcium is a mineral important for bones, nerves, muscles and the heart. The blood test measures how much calcium is in the blood."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Platelet Tests",
+    "topic": "Lab test",
+    "parameter": "Platelets",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/platelet-tests/",
+    "aliases": [
+      "platelet",
+      "platelets",
+      "plt",
+      "platelet count"
+    ],
+    "text": "Platelets are blood cell fragments that help blood clot. A platelet count shows how many are in the blood."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "White Blood Count (WBC)",
+    "topic": "Lab test",
+    "parameter": "White Blood Cells",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/white-blood-count-wbc/",
+    "aliases": [
+      "wbc",
+      "white blood cell",
+      "tlc",
+      "total leucocyte count",
+      "total leukocyte count",
+      "leukocytes",
+      "leucocytes"
+    ],
+    "text": "White blood cells are part of the immune system. A WBC count measures how many are in the blood; a differential shows the share of each type (such as neutrophils and lymphocytes)."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Complete Blood Count (CBC)",
+    "topic": "Lab test",
+    "parameter": "Complete Blood Count",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/complete-blood-count-cbc/",
+    "aliases": [
+      "cbc",
+      "mcv",
+      "mch",
+      "mchc",
+      "rdw",
+      "rbc",
+      "red blood cell",
+      "neutrophils",
+      "lymphocytes",
+      "eosinophils",
+      "monocytes",
+      "basophils"
+    ],
+    "text": "A complete blood count measures several parts of the blood, including red cells, white cells, hemoglobin, hematocrit and platelets. Indices such as MCV, MCH and MCHC describe the size and hemoglobin content of red blood cells."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Sodium Blood Test",
+    "topic": "Lab test",
+    "parameter": "Sodium",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/sodium-blood-test/",
+    "aliases": [
+      "sodium",
+      "na"
+    ],
+    "text": "Sodium is an electrolyte that helps control fluid balance and nerve and muscle function."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Potassium Blood Test",
+    "topic": "Lab test",
+    "parameter": "Potassium",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/potassium-blood-test/",
+    "aliases": [
+      "potassium",
+      "k"
+    ],
+    "text": "Potassium is an electrolyte needed for normal nerve, muscle and heart function."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Ferritin Blood Test",
+    "topic": "Lab test",
+    "parameter": "Ferritin",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/ferritin-blood-test/",
+    "aliases": [
+      "ferritin"
+    ],
+    "text": "Ferritin is a protein that stores iron. The test is used to estimate how much iron the body has stored."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Vitamin D Test",
+    "topic": "Lab test",
+    "parameter": "Vitamin D",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/vitamin-d-test/",
+    "aliases": [
+      "vitamin d",
+      "25-oh vitamin d",
+      "25 hydroxy vitamin d"
+    ],
+    "text": "Vitamin D helps the body absorb calcium for healthy bones. The blood test measures the amount of vitamin D in the body."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "ALT Blood Test",
+    "topic": "Lab test",
+    "parameter": "ALT",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/alt-blood-test/",
+    "aliases": [
+      "alt",
+      "sgpt",
+      "alanine aminotransferase"
+    ],
+    "text": "ALT is an enzyme found mostly in the liver. It is one of the liver function tests."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Liver Function Tests",
+    "topic": "Lab test",
+    "parameter": "Liver Function",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/liver-function-tests/",
+    "aliases": [
+      "liver function",
+      "lft",
+      "sgot",
+      "alp",
+      "alkaline phosphatase",
+      "albumin"
+    ],
+    "text": "Liver function tests measure enzymes, proteins and bilirubin in the blood to see how well the liver is working."
+  },
+  {
+    "source": "MedlinePlus (U.S. National Library of Medicine)",
+    "title": "Uric Acid Test",
+    "topic": "Lab test",
+    "parameter": "Uric Acid",
+    "section": "Overview",
+    "source_url": "https://medlineplus.gov/lab-tests/uric-acid-test/",
+    "aliases": [
+      "uric acid"
+    ],
+    "text": "Uric acid is a waste product made when the body breaks down substances called purines. The test measures how much is in the blood."
+  }
+]

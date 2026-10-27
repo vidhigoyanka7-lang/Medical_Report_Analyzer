@@ -1,0 +1,80 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Sora', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        navy:   '#07145C',
+        royal:  '#2563EB',
+        violet: '#7C3AED',
+        sky:    '#EFF6FF',
+        canvas: '#F4F7FF',
+        primary: {
+          50:  '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+        },
+        medical: {
+          blue:  '#1a56db',
+          teal:  '#0d9488',
+          green: '#059669',
+          red:   '#dc2626',
+        }
+      },
+      animation: {
+        fadeIn:     'fadeIn .5s ease both',
+        fadeUp:     'fadeUp .55s ease both',
+        slideDown:  'slideDown .35s ease both',
+        float:      'float 3s ease-in-out infinite',
+        floatSlow:  'float 5s ease-in-out infinite',
+        draw:       'draw 1.6s ease forwards',
+        glow:       'glow 2.5s ease-in-out infinite',
+        ping2:      'ping2 1.5s ease-in-out infinite',
+        shimmer:    'shimmer 2s linear infinite',
+        spin:       'spin 1s linear infinite',
+        pulse:      'pulse 2s cubic-bezier(.4,0,.6,1) infinite',
+        scaleIn:    'scaleIn .3s ease both',
+        slideRight: 'slideRight .4s ease both',
+      },
+      keyframes: {
+        fadeIn:     { from: { opacity: '0' }, to: { opacity: '1' } },
+        fadeUp:     { from: { opacity: '0', transform: 'translateY(18px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
+        slideDown:  { from: { opacity: '0', transform: 'translateY(-10px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
+        float:      { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+        draw:       { from: { strokeDashoffset: '1' }, to: { strokeDashoffset: '0' } },
+        glow:       { '0%,100%': { boxShadow: '0 0 0 0 rgba(37,99,235,.3)' }, '50%': { boxShadow: '0 0 24px 6px rgba(37,99,235,.18)' } },
+        ping2:      { '0%,100%': { transform: 'scale(1)', opacity: '1' }, '50%': { transform: 'scale(1.7)', opacity: '0' } },
+        shimmer:    { from: { backgroundPosition: '-200% 0' }, to: { backgroundPosition: '200% 0' } },
+        scaleIn:    { from: { opacity: '0', transform: 'scale(.92)' }, to: { opacity: '1', transform: 'scale(1)' } },
+        slideRight: { from: { opacity: '0', transform: 'translateX(-14px)' }, to: { opacity: '1', transform: 'translateX(0)' } },
+      },
+      boxShadow: {
+        card:   '0 2px 16px 0 rgba(7,20,92,.07)',
+        nav:    '0 4px 24px 0 rgba(7,20,92,.1)',
+        glow:   '0 0 30px 0 rgba(37,99,235,.25)',
+        violet: '0 8px 24px -4px rgba(124,58,237,.35)',
+      },
+      backgroundImage: {
+        'hero-gradient':   'linear-gradient(135deg, #07145C 0%, #1B2EA0 50%, #2563EB 100%)',
+        'card-gradient':   'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)',
+        'premium-gradient':'linear-gradient(135deg, #7C3AED 0%, #A855F7 100%)',
+      },
+    },
+  },
+  plugins: [],
+}

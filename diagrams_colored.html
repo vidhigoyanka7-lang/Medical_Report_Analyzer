@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MediGuide AI - Chapter 4 Architecture Diagrams (Colored Theme)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0f172a;
+      color: #f1f5f9;
+      padding: 40px 20px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #334155;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    p.subtitle {
+      font-size: 16px;
+      color: #94a3b8;
+    }
+    .figure-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 50px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    }
+    .figure-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .figure-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-primary { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+    .badge-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+    .badge-emerald { background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
+    .badge-amber { background: rgba(251, 191, 36, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
+    
+    .svg-wrapper {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+      overflow-x: auto;
+      display: flex;
+      justify-content: center;
+    }
+    svg {
+      max-width: 100%;
+      height: auto;
+    }
+    .caption {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #94a3b8;
+      text-align: center;
+      font-style: italic;
+    }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #334155;
+      font-size: 13px;
+      justify-content: center;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .legend-color {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>MediGuide AI: Architecture & Design Diagrams</h1>
+      <p class="subtitle">Publication-grade, color-coded diagrams for Chapter 4 of the Project Report</p>
+    </header>
+
+    <!-- FIGURE 4.1 -->
+    <div class="figure-card">
+      <div class="figure-header">
+        <div class="figure-title">Figure 4.1: Verified System Architecture</div>
+        <span class="badge badge-primary">Four-Tier Verified System</span>
+      </div>
+      <div class="svg-wrapper">
+        <svg viewBox="0 0 1060 620" width="1060" height="620" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gradClient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0284c7" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#0369a1" stop-opacity="0.05"/>
+            </linearGradient>
+            <linearGradient id="gradBackend" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#d97706" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#b45309" stop-opacity="0.05"/>
+            </linearGradient>
+            <linearGradient id="gradPython" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#6d28d9" stop-opacity="0.05"/>
+            </linearGradient>
+            <linearGradient id="gradCloud" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#db2777" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#be185d" stop-opacity="0.05"/>
+            </linearGradient>
+            <linearGradient id="gradDB" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#059669" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#047857" stop-opacity="0.05"/>
+            </linearGradient>
+            
+            <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#38bdf8"/>
+            </marker>
+            <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#fbbf24"/>
+            </marker>
+            <marker id="arrow-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#c084fc"/>
+            </marker>
+            <marker id="arrow-emerald" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#34d399"/>
+            </marker>
+            <marker id="arrow-pink" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#f472b6"/>
+            </marker>
+          </defs>
+
+          <!-- 1. PRESENTATION LAYER (LEFT) -->
+          <rect x="20" y="20" width="220" height="570" rx="12" fill="url(#gradClient)" stroke="#0284c7" stroke-width="2"/>
+          <rect x="35" y="35" width="190" height="34" rx="6" fill="#0284c7"/>
+          <text x="130" y="57" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">1. PRESENTATION LAYER</text>
+
+          <rect x="35" y="85" width="190" height="90" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="130" y="110" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">React 18 SPA (Vite)</text>
+          <text x="130" y="130" fill="#94a3b8" font-size="11" text-anchor="middle">• Tailwind CSS + Lucide Icons</text>
+          <text x="130" y="148" fill="#94a3b8" font-size="11" text-anchor="middle">• Axios API Client</text>
+          <text x="130" y="164" fill="#94a3b8" font-size="11" text-anchor="middle">• Port 3000 (localhost)</text>
+
+          <rect x="35" y="190" width="190" height="175" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+          <text x="130" y="212" fill="#f8fafc" font-size="12" font-weight="600" text-anchor="middle">Key Views & Pages</text>
+          <text x="50" y="235" fill="#cbd5e1" font-size="11">✓ Dashboard & Metrics</text>
+          <text x="50" y="255" fill="#cbd5e1" font-size="11">✓ Drag & Drop Upload</text>
+          <text x="50" y="275" fill="#cbd5e1" font-size="11">✓ Analysis & Badges</text>
+          <text x="50" y="295" fill="#cbd5e1" font-size="11">✓ Doctor Summary View</text>
+          <text x="50" y="315" fill="#cbd5e1" font-size="11">✓ AI Assistant (Q&A Chat)</text>
+          <text x="50" y="335" fill="#cbd5e1" font-size="11">✓ Compare & Trends</text>
+          <text x="50" y="355" fill="#cbd5e1" font-size="11">✓ Health Profile</text>
+
+          <rect x="35" y="380" width="190" height="190" rx="8" fill="#0f172a" stroke="#0284c7" stroke-dasharray="4" stroke-width="1.5"/>
+          <text x="130" y="405" fill="#38bdf8" font-size="12" font-weight="600" text-anchor="middle">End User Roles</text>
+          <text x="130" y="435" fill="#94a3b8" font-size="11" text-anchor="middle">Uploads Medical PDFs/Images</text>
+          <text x="130" y="460" fill="#94a3b8" font-size="11" text-anchor="middle">Views Color-Coded Flags</text>
+          <text x="130" y="485" fill="#94a3b8" font-size="11" text-anchor="middle">Reads Educational Summary</text>
+          <text x="130" y="510" fill="#94a3b8" font-size="11" text-anchor="middle">Asks Interactive Questions</text>
+          <text x="130" y="540" fill="#f59e0b" font-size="11" font-weight="600" text-anchor="middle">⚠ No Direct LLM Calls</text>
+          <text x="130" y="555" fill="#f59e0b" font-size="10" text-anchor="middle">(No API Keys on Client)</text>
+
+          <!-- 2. APPLICATION LAYER (CENTER) -->
+          <rect x="290" y="20" width="370" height="570" rx="12" fill="url(#gradBackend)" stroke="#d97706" stroke-width="2"/>
+          <rect x="305" y="35" width="340" height="34" rx="6" fill="#d97706"/>
+          <text x="475" y="57" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">2. APPLICATION LAYER (Node.js & Express)</text>
+
+          <!-- Security & Middleware -->
+          <rect x="310" y="85" width="330" height="60" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.2"/>
+          <text x="475" y="105" fill="#fbbf24" font-size="12" font-weight="700" text-anchor="middle">API Routing, Auth & Security</text>
+          <text x="475" y="125" fill="#94a3b8" font-size="11" text-anchor="middle">JWT Verification • bcryptjs • Helmet • Rate-Limit</text>
+
+          <!-- Document Processing -->
+          <rect x="310" y="155" width="330" height="80" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.2"/>
+          <text x="475" y="177" fill="#f59e0b" font-size="12" font-weight="700" text-anchor="middle">Document Processing Pipeline</text>
+          <text x="475" y="198" fill="#cbd5e1" font-size="11" text-anchor="middle">• Digital PDF: <tspan fill="#38bdf8">pdf-parse</tspan> (Text Layer)</text>
+          <text x="475" y="218" fill="#cbd5e1" font-size="11" text-anchor="middle">• Scanned / Images: <tspan fill="#34d399">Tesseract.js</tspan> (OCR Engine)</text>
+
+          <!-- Deterministic Rule Engine -->
+          <rect x="310" y="245" width="330" height="85" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+          <text x="475" y="267" fill="#34d399" font-size="12" font-weight="700" text-anchor="middle">Deterministic Clinical Rule Engine</text>
+          <text x="475" y="287" fill="#cbd5e1" font-size="11" text-anchor="middle">Regex Parameter Extraction (Values, Units, Ranges)</text>
+          <text x="475" y="307" fill="#fcd34d" font-size="11" font-weight="600" text-anchor="middle">Software Classification: LOW | NORMAL | HIGH | UNKNOWN</text>
+          <text x="475" y="322" fill="#94a3b8" font-size="10" text-anchor="middle">(Decoupled from LLM; Never Decided by AI)</text>
+
+          <!-- AI & Evidence Orchestrator -->
+          <rect x="310" y="340" width="330" height="100" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+          <text x="475" y="362" fill="#c084fc" font-size="12" font-weight="700" text-anchor="middle">AI & RAG Orchestrator (aiService.js)</text>
+          <text x="475" y="382" fill="#cbd5e1" font-size="11" text-anchor="middle">Calls Python BioBERT Service for Context Ranking</text>
+          <text x="475" y="400" fill="#cbd5e1" font-size="11" text-anchor="middle">Retrieves Multi-Tier Medical Evidence (Local + Web)</text>
+          <text x="475" y="418" fill="#cbd5e1" font-size="11" text-anchor="middle">Synthesizes Grounded Safety Prompt ([1], [2] Citations)</text>
+          <text x="475" y="433" fill="#38bdf8" font-size="10" text-anchor="middle">Caches AI Summary in MySQL (medical_reports.ai_summary)</text>
+
+          <!-- Duplicate Hash Checking -->
+          <rect x="310" y="450" width="330" height="45" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+          <text x="475" y="475" fill="#94a3b8" font-size="11" text-anchor="middle">SHA-256 File Deduplication & Integrity Hash</text>
+
+          <!-- 3. AI MICROSERVICE & CLOUD SERVICES (RIGHT TOP) -->
+          <rect x="710" y="20" width="330" height="260" rx="12" fill="url(#gradPython)" stroke="#7c3aed" stroke-width="2"/>
+          <rect x="725" y="35" width="300" height="34" rx="6" fill="#7c3aed"/>
+          <text x="875" y="57" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">3. AI-PROCESSING MICROSERVICE</text>
+
+          <rect x="725" y="85" width="300" height="175" rx="8" fill="#1e293b" stroke="#c084fc" stroke-width="1.2"/>
+          <text x="875" y="110" fill="#c084fc" font-size="13" font-weight="700" text-anchor="middle">Python FastAPI Service (:8000)</text>
+          <text x="875" y="130" fill="#f8fafc" font-size="11" font-weight="600" text-anchor="middle">dmis-lab/biobert-base-cased-v1.1</text>
+          <text x="740" y="155" fill="#cbd5e1" font-size="11">• Hugging Face Transformers & PyTorch</text>
+          <text x="740" y="175" fill="#cbd5e1" font-size="11">• 768-dimensional Mean Token Vectors</text>
+          <text x="740" y="195" fill="#cbd5e1" font-size="11">• Cosine Similarity + Medical Keyword Boost</text>
+          <text x="740" y="215" fill="#cbd5e1" font-size="11">• Returns Top-6 Report Sentences</text>
+          <text x="875" y="245" fill="#f43f5e" font-size="11" font-weight="600" text-anchor="middle">⛔ Does NOT Generate Text Answers</text>
+
+          <!-- 4. EXTERNAL CLOUD SERVICES & EVIDENCE (RIGHT MIDDLE) -->
+          <rect x="710" y="295" width="330" height="150" rx="12" fill="url(#gradCloud)" stroke="#db2777" stroke-width="2"/>
+          <rect x="725" y="305" width="300" height="28" rx="6" fill="#db2777"/>
+          <text x="875" y="324" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">EXTERNAL LLMs & EVIDENCE SOURCES</text>
+
+          <rect x="725" y="340" width="145" height="42" rx="6" fill="#1e293b" stroke="#ec4899" stroke-width="1"/>
+          <text x="797" y="358" fill="#f472b6" font-size="10" font-weight="700" text-anchor="middle">Groq Cloud LLM</text>
+          <text x="797" y="373" fill="#cbd5e1" font-size="9" text-anchor="middle">openai/gpt-oss-120b</text>
+
+          <rect x="880" y="340" width="145" height="42" rx="6" fill="#1e293b" stroke="#ec4899" stroke-width="1"/>
+          <text x="952" y="358" fill="#f472b6" font-size="10" font-weight="700" text-anchor="middle">Gemini Fallback</text>
+          <text x="952" y="373" fill="#cbd5e1" font-size="9" text-anchor="middle">gemini-3.8-flash</text>
+
+          <rect x="725" y="390" width="145" height="42" rx="6" fill="#1e293b" stroke="#ec4899" stroke-width="1"/>
+          <text x="797" y="408" fill="#f472b6" font-size="10" font-weight="700" text-anchor="middle">NIH/NLM API</text>
+          <text x="797" y="423" fill="#cbd5e1" font-size="9" text-anchor="middle">MedlinePlus Search</text>
+
+          <rect x="880" y="390" width="145" height="42" rx="6" fill="#1e293b" stroke="#ec4899" stroke-width="1"/>
+          <text x="952" y="408" fill="#f472b6" font-size="10" font-weight="700" text-anchor="middle">WHO Fact Sheets</text>
+          <text x="952" y="423" fill="#cbd5e1" font-size="9" text-anchor="middle">Live Public Health Docs</text>
+
+          <!-- 5. DATA LAYER (RIGHT BOTTOM) -->
+          <rect x="710" y="460" width="330" height="130" rx="12" fill="url(#gradDB)" stroke="#059669" stroke-width="2"/>
+          <rect x="725" y="470" width="300" height="28" rx="6" fill="#059669"/>
+          <text x="875" y="489" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">4. DATA LAYER (MySQL & Storage)</text>
+
+          <rect x="725" y="505" width="145" height="70" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+          <text x="797" y="525" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">MySQL Database</text>
+          <text x="797" y="542" fill="#cbd5e1" font-size="10" text-anchor="middle">7 Normalized Tables</text>
+          <text x="797" y="558" fill="#94a3b8" font-size="9" text-anchor="middle">mysql2 pool (:3306)</text>
+
+          <rect x="880" y="505" width="145" height="70" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+          <text x="952" y="525" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">Local Disk Files</text>
+          <text x="952" y="542" fill="#cbd5e1" font-size="10" text-anchor="middle">backend/uploads/</text>
+          <text x="952" y="558" fill="#94a3b8" font-size="9" text-anchor="middle">SHA-256 Deduplicated</text>
+
+          <!-- CONNECTING ARROWS -->
+          <!-- Client -> Express -->
+          <line x1="240" y1="130" x2="290" y2="130" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow-blue)"/>
+          <text x="265" y="122" fill="#38bdf8" font-size="10" font-weight="600" text-anchor="middle">REST</text>
+
+          <line x1="290" y1="380" x2="240" y2="380" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow-blue)"/>
+          <text x="265" y="372" fill="#38bdf8" font-size="10" font-weight="600" text-anchor="middle">JSON</text>
+
+          <!-- Express -> Python BioBERT -->
+          <path d="M 640 370 H 675 V 170 H 710" fill="none" stroke="#c084fc" stroke-width="2" marker-end="url(#arrow-purple)"/>
+          <text x="675" y="270" fill="#c084fc" font-size="10" font-weight="600" text-anchor="middle">/api/ask_question</text>
+
+          <!-- Express -> External Cloud LLM -->
+          <line x1="640" y1="390" x2="710" y2="360" stroke="#f472b6" stroke-width="2" marker-end="url(#arrow-pink)"/>
+
+          <!-- Express -> Data Layer -->
+          <line x1="640" y1="520" x2="710" y2="525" stroke="#34d399" stroke-width="2" marker-end="url(#arrow-emerald)"/>
+          <text x="675" y="515" fill="#34d399" font-size="10" font-weight="600" text-anchor="middle">SQL / I/O</text>
+
+        </svg>
+      </div>
+      <div class="caption">Figure 4.1: Verified Four-Tier System Architecture of MediGuide AI (Presentation, Application, BioBERT AI Service, and Data Layer).</div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-color" style="background: #0284c7;"></div><span>Presentation Layer (React 18 SPA)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background: #d97706;"></div><span>Application Layer (Node.js & Express)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background: #7c3aed;"></div><span>Biomedical NLP (Python FastAPI BioBERT)</span></div>
+        <div class="legend-item"><div class="legend-color" style="background: #db2777;"></div><span>Foundation LLMs & External Evidence</span></div>
+        <div class="legend-item"><div class="legend-color" style="background: #059669;"></div><span>Data Layer (MySQL & Local Storage)</span></div>
+      </div>
+    </div>
+
+    <!-- FIGURE 4.2 -->
+    <div class="figure-card">
+      <div class="figure-header">
+        <div class="figure-title">Figure 4.2: End-to-End Processing Workflow</div>
+        <span class="badge badge-amber">Two-Phase Execution Model</span>
+      </div>
+      <div class="svg-wrapper">
+        <svg viewBox="0 0 1060 480" width="1060" height="480" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="flow-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#64748b"/>
+            </marker>
+          </defs>
+
+          <!-- PHASE 1: INGESTION & EXTRACTION -->
+          <rect x="20" y="20" width="1020" height="200" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+          <rect x="35" y="30" width="460" height="28" rx="6" fill="#f59e0b"/>
+          <text x="265" y="49" fill="#0f172a" font-size="12" font-weight="800">PHASE 1: SYNCHRONOUS INGESTION & EXTRACTION (UPLOAD TIME)</text>
+
+          <!-- Step 1 -->
+          <rect x="35" y="75" width="130" height="65" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="100" y="98" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. File Upload</text>
+          <text x="100" y="116" fill="#94a3b8" font-size="10" text-anchor="middle">PDF, PNG, JPG</text>
+          <text x="100" y="130" fill="#64748b" font-size="9" text-anchor="middle">(Max 20MB)</text>
+
+          <!-- Step 2 -->
+          <rect x="200" y="75" width="135" height="65" rx="8" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="267" y="98" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle">2. Validation & Hash</text>
+          <text x="267" y="116" fill="#94a3b8" font-size="10" text-anchor="middle">SHA-256 Check</text>
+          <text x="267" y="130" fill="#10b981" font-size="9" text-anchor="middle">Skip duplicate files</text>
+
+          <!-- Step 3 -->
+          <rect x="370" y="75" width="145" height="65" rx="8" fill="#0f172a" stroke="#f97316" stroke-width="1.5"/>
+          <text x="442" y="98" fill="#f97316" font-size="11" font-weight="700" text-anchor="middle">3. Text Layer vs OCR</text>
+          <text x="442" y="116" fill="#94a3b8" font-size="10" text-anchor="middle">Digital: pdf-parse</text>
+          <text x="442" y="130" fill="#94a3b8" font-size="10" text-anchor="middle">Scanned: Tesseract.js</text>
+
+          <!-- Step 4 -->
+          <rect x="550" y="75" width="150" height="65" rx="8" fill="#0f172a" stroke="#a855f7" stroke-width="1.5"/>
+          <text x="625" y="98" fill="#c084fc" font-size="11" font-weight="700" text-anchor="middle">4. Regex Parsing</text>
+          <text x="625" y="116" fill="#94a3b8" font-size="10" text-anchor="middle">Extracts Names, Values,</text>
+          <text x="625" y="130" fill="#94a3b8" font-size="10" text-anchor="middle">Units, Printed Ranges</text>
+
+          <!-- Step 5 -->
+          <rect x="735" y="75" width="145" height="65" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="2"/>
+          <text x="807" y="98" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">5. Rule Classification</text>
+          <text x="807" y="116" fill="#fcd34d" font-size="10" font-weight="600" text-anchor="middle">LOW | NORMAL | HIGH</text>
+          <text x="807" y="130" fill="#94a3b8" font-size="9" text-anchor="middle">Deterministic logic</text>
+
+          <!-- Step 6 -->
+          <rect x="915" y="75" width="110" height="65" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+          <text x="970" y="98" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">6. MySQL Save</text>
+          <text x="970" y="116" fill="#94a3b8" font-size="10" text-anchor="middle">lab_results</text>
+          <text x="970" y="130" fill="#94a3b8" font-size="10" text-anchor="middle">medical_reports</text>
+
+          <!-- Connectors Phase 1 -->
+          <line x1="165" y1="107" x2="200" y2="107" stroke="#64748b" stroke-width="2" marker-end="url(#flow-arrow)"/>
+          <line x1="335" y1="107" x2="370" y2="107" stroke="#64748b" stroke-width="2" marker-end="url(#flow-arrow)"/>
+          <line x1="515" y1="107" x2="550" y2="107" stroke="#64748b" stroke-width="2" marker-end="url(#flow-arrow)"/>
+          <line x1="700" y1="107" x2="735" y2="107" stroke="#64748b" stroke-width="2" marker-end="url(#flow-arrow)"/>
+          <line x1="880" y1="107" x2="915" y2="107" stroke="#64748b" stroke-width="2" marker-end="url(#flow-arrow)"/>
+
+          <text x="530" y="180" fill="#94a3b8" font-size="11" text-anchor="middle">Results are saved in MySQL immediately. User is redirected to Analysis Dashboard within seconds.</text>
+
+
+          <!-- PHASE 2: ON-DEMAND AI ANALYSIS -->
+          <rect x="20" y="245" width="1020" height="200" rx="12" fill="#1e293b" stroke="#7c3aed" stroke-width="2"/>
+          <rect x="35" y="255" width="480" height="28" rx="6" fill="#7c3aed"/>
+          <text x="275" y="274" fill="#ffffff" font-size="12" font-weight="800">PHASE 2: ON-DEMAND AI SUMMARY GENERATION & Q&A CONSULTATION</text>
+
+          <!-- Step 7 -->
+          <rect x="35" y="300" width="145" height="65" rx="8" fill="#0f172a" stroke="#c084fc" stroke-width="1.5"/>
+          <text x="107" y="323" fill="#c084fc" font-size="11" font-weight="700" text-anchor="middle">7. User Request</text>
+          <text x="107" y="341" fill="#94a3b8" font-size="10" text-anchor="middle">View AI Summary or</text>
+          <text x="107" y="355" fill="#94a3b8" font-size="10" text-anchor="middle">Ask Medical Question</text>
+
+          <!-- Step 8 -->
+          <rect x="215" y="300" width="155" height="65" rx="8" fill="#0f172a" stroke="#a855f7" stroke-width="1.5"/>
+          <text x="292" y="323" fill="#c084fc" font-size="11" font-weight="700" text-anchor="middle">8. BioBERT Context</text>
+          <text x="292" y="341" fill="#94a3b8" font-size="10" text-anchor="middle">Python /api/ask_question</text>
+          <text x="292" y="355" fill="#cbd5e1" font-size="9" text-anchor="middle">Ranks Top-6 Report Lines</text>
+
+          <!-- Step 9 -->
+          <rect x="405" y="300" width="165" height="65" rx="8" fill="#0f172a" stroke="#ec4899" stroke-width="1.5"/>
+          <text x="487" y="323" fill="#f472b6" font-size="11" font-weight="700" text-anchor="middle">9. Evidence Retrieval</text>
+          <text x="487" y="341" fill="#94a3b8" font-size="10" text-anchor="middle">Local MedlinePlus JSON</text>
+          <text x="487" y="355" fill="#94a3b8" font-size="10" text-anchor="middle">NIH/NLM API + WHO Sheets</text>
+
+          <!-- Step 10 -->
+          <rect x="605" y="300" width="165" height="65" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="687" y="323" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">10. Grounded Prompt</text>
+          <text x="687" y="341" fill="#94a3b8" font-size="10" text-anchor="middle">Patient Labs + Ranges</text>
+          <text x="687" y="355" fill="#f59e0b" font-size="9" font-weight="600" text-anchor="middle">Grade 8 • No Diagnosis</text>
+
+          <!-- Step 11 -->
+          <rect x="805" y="300" width="140" height="65" rx="8" fill="#0f172a" stroke="#ec4899" stroke-width="1.5"/>
+          <text x="875" y="323" fill="#f472b6" font-size="11" font-weight="700" text-anchor="middle">11. LLM Generation</text>
+          <text x="875" y="341" fill="#cbd5e1" font-size="10" text-anchor="middle">Groq (gpt-oss-120b)</text>
+          <text x="875" y="355" fill="#94a3b8" font-size="9" text-anchor="middle">Fallback: Gemini Flash</text>
+
+          <!-- Step 12 -->
+          <rect x="975" y="300" width="55" height="65" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+          <text x="1002" y="328" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">12.</text>
+          <text x="1002" y="348" fill="#34d399" font-size="10" text-anchor="middle">UI</text>
+
+          <!-- Connectors Phase 2 -->
+          <line x1="180" y1="332" x2="215" y2="332" stroke="#64748b" stroke-width="2" marker-end="url(#flow-arrow)"/>
+          <line x1="370" y1="332" x2="405" y2="332" stroke="#64748b" stroke-width="2" marker-end="url(#flow-arrow)"/>
+          <line x1="570" y1="332" x2="605" y2="332" stroke="#64748b" stroke-width="2" marker-end="url(#flow-arrow)"/>
+          <line x1="770" y1="332" x2="805" y2="332" stroke="#64748b" stroke-width="2" marker-end="url(#flow-arrow)"/>
+          <line x1="945" y1="332" x2="975" y2="332" stroke="#64748b" stroke-width="2" marker-end="url(#flow-arrow)"/>
+
+          <text x="530" y="405" fill="#94a3b8" font-size="11" text-anchor="middle">Generated summary is cached in medical_reports.ai_summary. Subsequent loads render instantaneously.</text>
+        </svg>
+      </div>
+      <div class="caption">Figure 4.2: End-to-End Processing Workflow, separating Synchronous Report Ingestion from On-Demand Grounded AI Consultation.</div>
+    </div>
+
+    <!-- FIGURE 4.3 -->
+    <div class="figure-card">
+      <div class="figure-header">
+        <div class="figure-title">Figure 4.3: Retrieval-Augmented Generation (RAG) Architecture</div>
+        <span class="badge badge-emerald">Verified Dual-Branch Pipeline</span>
+      </div>
+      <div class="svg-wrapper">
+        <svg viewBox="0 0 1060 520" width="1060" height="520" xmlns="http://www.w3.org/2000/svg">
+          <!-- PATIENT BRANCH (LEFT) -->
+          <rect x="30" y="20" width="460" height="230" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+          <rect x="45" y="30" width="430" height="26" rx="5" fill="#0284c7"/>
+          <text x="260" y="48" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">PATIENT-SPECIFIC CLINICAL BRANCH</text>
+
+          <rect x="45" y="70" width="200" height="70" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+          <text x="145" y="92" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">Extracted Lab Parameters</text>
+          <text x="145" y="110" fill="#cbd5e1" font-size="10" text-anchor="middle">Values + Units + Printed Ranges</text>
+          <text x="145" y="126" fill="#fcd34d" font-size="10" text-anchor="middle">Classified: LOW / NORMAL / HIGH</text>
+
+          <rect x="265" y="70" width="210" height="70" rx="6" fill="#0f172a" stroke="#a855f7" stroke-width="1"/>
+          <text x="370" y="92" fill="#c084fc" font-size="11" font-weight="700" text-anchor="middle">BioBERT Semantic Ranking</text>
+          <text x="370" y="110" fill="#cbd5e1" font-size="10" text-anchor="middle">768-d Vector Cosine Similarity</text>
+          <text x="370" y="126" fill="#cbd5e1" font-size="10" text-anchor="middle">Ranks Top-6 Relevant Sentences</text>
+
+          <rect x="45" y="155" width="430" height="80" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+          <text x="260" y="177" fill="#f8fafc" font-size="11" font-weight="600" text-anchor="middle">User Health Profile & Demographics (Context Only)</text>
+          <text x="260" y="197" fill="#94a3b8" font-size="10" text-anchor="middle">Age • Gender • Pre-existing Conditions • Current Medications • Family History</text>
+          <text x="260" y="217" fill="#64748b" font-size="9" text-anchor="middle">Prevents hallucinations regarding age, fasting status, or medication conflicts</text>
+
+
+          <!-- EVIDENCE BRANCH (RIGHT) -->
+          <rect x="570" y="20" width="460" height="230" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+          <rect x="585" y="30" width="430" height="26" rx="5" fill="#059669"/>
+          <text x="800" y="48" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">TRUSTED GENERAL MEDICAL EVIDENCE BRANCH</text>
+
+          <rect x="585" y="70" width="135" height="90" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1"/>
+          <text x="652" y="95" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">Tier 1: Local KB</text>
+          <text x="652" y="115" fill="#cbd5e1" font-size="9" text-anchor="middle">medicalKnowledge.json</text>
+          <text x="652" y="130" fill="#94a3b8" font-size="9" text-anchor="middle">MedlinePlus Labs</text>
+          <text x="652" y="145" fill="#38bdf8" font-size="9" text-anchor="middle">Instant Lookup</text>
+
+          <rect x="732" y="70" width="135" height="90" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1"/>
+          <text x="800" y="95" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">Tier 2: NIH/NLM</text>
+          <text x="800" y="115" fill="#cbd5e1" font-size="9" text-anchor="middle">Live Web API</text>
+          <text x="800" y="130" fill="#94a3b8" font-size="9" text-anchor="middle">MedlinePlus Topics</text>
+          <text x="800" y="145" fill="#38bdf8" font-size="9" text-anchor="middle">XML Query Service</text>
+
+          <rect x="880" y="70" width="135" height="90" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1"/>
+          <text x="947" y="95" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">Tier 3: WHO</text>
+          <text x="947" y="115" fill="#cbd5e1" font-size="9" text-anchor="middle">Official Fact Sheets</text>
+          <text x="947" y="130" fill="#94a3b8" font-size="9" text-anchor="middle">Global Guidelines</text>
+          <text x="947" y="145" fill="#38bdf8" font-size="9" text-anchor="middle">24h In-Memory Cache</text>
+
+          <rect x="585" y="175" width="430" height="60" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+          <text x="800" y="198" fill="#f8fafc" font-size="11" font-weight="600" text-anchor="middle">Evidence Filtering & De-duplication</text>
+          <text x="800" y="218" fill="#94a3b8" font-size="10" text-anchor="middle">Top 4 concise medical passages linked to specific citation URLs</text>
+
+
+          <!-- PROMPT SYNTHESIS & SAFETY (CENTER) -->
+          <rect x="180" y="280" width="700" height="100" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+          <rect x="195" y="290" width="670" height="24" rx="4" fill="#d97706"/>
+          <text x="530" y="307" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">PROMPT GROUNDING & SAFETY LAYER (aiService.js)</text>
+          <text x="530" y="332" fill="#fcd34d" font-size="11" font-weight="600" text-anchor="middle">• FORBIDDEN: Disease diagnosis, prescribing drugs, or modifying medical regimens</text>
+          <text x="530" y="350" fill="#cbd5e1" font-size="10" text-anchor="middle">• MANDATORY: Grade 8 plain language, discuss with doctor disclaimer, cite evidence using [1], [2]</text>
+          <text x="530" y="367" fill="#38bdf8" font-size="10" text-anchor="middle">• ABNORMAL RESULTS RESTRICTION: Only LOW and HIGH results may ever be discussed as abnormal</text>
+
+          <!-- ARROWS DOWN TO SYNTHESIS -->
+          <path d="M 260 250 V 280" stroke="#38bdf8" stroke-width="2" marker-end="url(#flow-arrow)"/>
+          <path d="M 800 250 V 280" stroke="#10b981" stroke-width="2" marker-end="url(#flow-arrow)"/>
+
+          <!-- LLM ENGINE & OUTPUT (BOTTOM) -->
+          <rect x="280" y="410" width="500" height="90" rx="10" fill="#1e293b" stroke="#db2777" stroke-width="2"/>
+          <rect x="295" y="420" width="470" height="24" rx="4" fill="#db2777"/>
+          <text x="530" y="437" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">FOUNDATION LLM ORCHESTRATION & GENERATION</text>
+
+          <rect x="305" y="452" width="220" height="38" rx="6" fill="#0f172a" stroke="#ec4899" stroke-width="1"/>
+          <text x="415" y="470" fill="#f472b6" font-size="11" font-weight="700" text-anchor="middle">Primary: Groq Cloud API</text>
+          <text x="415" y="483" fill="#cbd5e1" font-size="9" text-anchor="middle">openai/gpt-oss-120b</text>
+
+          <rect x="545" y="452" width="220" height="38" rx="6" fill="#0f172a" stroke="#ec4899" stroke-width="1"/>
+          <text x="655" y="470" fill="#f472b6" font-size="11" font-weight="700" text-anchor="middle">Failover: Google Gemini</text>
+          <text x="655" y="483" fill="#cbd5e1" font-size="9" text-anchor="middle">gemini-3.8-flash</text>
+
+          <path d="M 530 380 V 410" stroke="#f59e0b" stroke-width="2" marker-end="url(#flow-arrow)"/>
+        </svg>
+      </div>
+      <div class="caption">Figure 4.3: Retrieval-Augmented Generation (RAG) Architecture, showing strict decoupling between Patient Data, External Evidence Tiers, and Foundation LLMs.</div>
+    </div>
+
+    <!-- FIGURE 4.4 -->
+    <div class="figure-card">
+      <div class="figure-header">
+        <div class="figure-title">Figure 4.4: Relational Database Entity-Relationship Architecture</div>
+        <span class="badge badge-purple">MySQL Schema & Foreign Keys</span>
+      </div>
+      <div class="svg-wrapper">
+        <svg viewBox="0 0 1060 520" width="1060" height="520" xmlns="http://www.w3.org/2000/svg">
+          <!-- USERS TABLE (CENTER LEFT) -->
+          <rect x="40" y="160" width="240" height="190" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+          <rect x="40" y="160" width="240" height="32" rx="6" fill="#0284c7"/>
+          <text x="160" y="182" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">users</text>
+          <text x="55" y="210" fill="#fcd34d" font-size="11" font-weight="700">PK  user_id (INT AUTO_INC)</text>
+          <text x="55" y="230" fill="#cbd5e1" font-size="11">    full_name (VARCHAR 255)</text>
+          <text x="55" y="250" fill="#cbd5e1" font-size="11">UK  email (VARCHAR 255)</text>
+          <text x="55" y="270" fill="#cbd5e1" font-size="11">    password_hash (VARCHAR 255)</text>
+          <text x="55" y="290" fill="#94a3b8" font-size="11">    created_at (TIMESTAMP)</text>
+          <text x="55" y="310" fill="#94a3b8" font-size="11">    updated_at (TIMESTAMP)</text>
+
+          <!-- HEALTH PROFILE (TOP LEFT) -->
+          <rect x="40" y="20" width="240" height="115" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+          <rect x="40" y="20" width="240" height="28" rx="6" fill="#7c3aed"/>
+          <text x="160" y="39" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">health_profiles</text>
+          <text x="55" y="65" fill="#fcd34d" font-size="10" font-weight="700">PK  profile_id (INT)</text>
+          <text x="55" y="80" fill="#38bdf8" font-size="10">FK  user_id (INT UNIQUE)</text>
+          <text x="55" y="95" fill="#cbd5e1" font-size="10">    DOB, gender, blood_group</text>
+          <text x="55" y="110" fill="#cbd5e1" font-size="10">    height_cm, weight_kg, contact</text>
+
+          <!-- HEALTH CONDITIONS (BOTTOM LEFT) -->
+          <rect x="40" y="380" width="240" height="110" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+          <rect x="40" y="380" width="240" height="28" rx="6" fill="#7c3aed"/>
+          <text x="160" y="399" fill="#ffffff" font-size="12" font-weight="700" text-anchor="middle">health_conditions / meds / family</text>
+          <text x="55" y="425" fill="#fcd34d" font-size="10" font-weight="700">PK  condition_id / medication_id</text>
+          <text x="55" y="442" fill="#38bdf8" font-size="10">FK  user_id (CASCADE)</text>
+          <text x="55" y="459" fill="#cbd5e1" font-size="10">    condition_name / medication_name</text>
+          <text x="55" y="476" fill="#cbd5e1" font-size="10">    dosage / relation</text>
+
+          <!-- MEDICAL REPORTS (CENTER RIGHT) -->
+          <rect x="390" y="110" width="290" height="280" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+          <rect x="390" y="110" width="290" height="32" rx="6" fill="#d97706"/>
+          <text x="535" y="132" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">medical_reports</text>
+          <text x="405" y="160" fill="#fcd34d" font-size="11" font-weight="700">PK  report_id (INT AUTO_INC)</text>
+          <text x="405" y="180" fill="#38bdf8" font-size="11">FK  user_id (INT CASCADE)</text>
+          <text x="405" y="200" fill="#cbd5e1" font-size="11">    report_name, report_type</text>
+          <text x="405" y="220" fill="#cbd5e1" font-size="11">    report_date (DATE)</text>
+          <text x="405" y="240" fill="#cbd5e1" font-size="11">    file_name, file_path, mime_type</text>
+          <text x="405" y="260" fill="#34d399" font-size="11" font-weight="600">    file_hash (CHAR 64 SHA-256)</text>
+          <text x="405" y="280" fill="#cbd5e1" font-size="11">    processing_status ('completed')</text>
+          <text x="405" y="300" fill="#94a3b8" font-size="11">    extracted_text (LONGTEXT)</text>
+          <text x="405" y="320" fill="#c084fc" font-size="11" font-weight="600">    ai_summary (LONGTEXT CACHED)</text>
+          <text x="405" y="340" fill="#f43f5e" font-size="11">    processing_error (VARCHAR 500)</text>
+          <text x="405" y="360" fill="#94a3b8" font-size="11">    uploaded_at (TIMESTAMP)</text>
+
+          <!-- LAB RESULTS (FAR RIGHT) -->
+          <rect x="780" y="140" width="250" height="220" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+          <rect x="780" y="140" width="250" height="32" rx="6" fill="#059669"/>
+          <text x="905" y="162" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">lab_results</text>
+          <text x="795" y="190" fill="#fcd34d" font-size="11" font-weight="700">PK  result_id (INT AUTO_INC)</text>
+          <text x="795" y="210" fill="#f59e0b" font-size="11">FK  report_id (INT CASCADE)</text>
+          <text x="795" y="235" fill="#cbd5e1" font-size="11">    test_name (VARCHAR 255)</text>
+          <text x="795" y="255" fill="#38bdf8" font-size="11" font-weight="600">    test_value (DOUBLE)</text>
+          <text x="795" y="275" fill="#cbd5e1" font-size="11">    unit (VARCHAR 50)</text>
+          <text x="795" y="295" fill="#38bdf8" font-size="11">    reference_min (DOUBLE)</text>
+          <text x="795" y="315" fill="#38bdf8" font-size="11">    reference_max (DOUBLE)</text>
+          <text x="795" y="338" fill="#fcd34d" font-size="11" font-weight="700">    status ('LOW'|'NORMAL'|'HIGH')</text>
+
+          <!-- RELATIONSHIP LINES -->
+          <!-- users -> health_profiles -->
+          <line x1="160" y1="160" x2="160" y2="135" stroke="#38bdf8" stroke-width="2"/>
+          <!-- users -> health_conditions -->
+          <line x1="160" y1="350" x2="160" y2="380" stroke="#38bdf8" stroke-width="2"/>
+
+          <!-- users -> medical_reports -->
+          <line x1="280" y1="230" x2="390" y2="230" stroke="#38bdf8" stroke-width="2.5"/>
+          <text x="335" y="222" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1 : N</text>
+
+          <!-- medical_reports -> lab_results -->
+          <line x1="680" y1="250" x2="780" y2="250" stroke="#f59e0b" stroke-width="2.5"/>
+          <text x="730" y="242" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">1 : N</text>
+        </svg>
+      </div>
+      <div class="caption">Figure 4.4: Relational Database Schema & Foreign Key Constraints for MediGuide AI (IEEE DOUBLE Numeric Integrity).</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

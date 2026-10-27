@@ -1,0 +1,206 @@
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================================
+   Base layer
+   ======================================================== */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #F0F4FF;
+    color: #0f172a;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Headings use Sora; body text uses Plus Jakarta Sans */
+  h1,h2,h3,h4,h5,h6 { font-family: 'Sora', 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: #F1F5F9; }
+  ::-webkit-scrollbar-thumb { background: #C7D4F0; border-radius: 999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #2563EB; }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ========================================================
+   Component layer
+   ======================================================== */
+@layer components {
+
+  /* ── Card ────────────────────────────────── */
+  .card {
+    @apply bg-white rounded-2xl shadow-card border border-slate-100/80;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-nav cursor-pointer;
+  }
+
+  /* ── Buttons ─────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl
+           bg-gradient-to-r from-royal to-violet text-white font-semibold text-sm
+           shadow-md hover:shadow-glow hover:opacity-95 active:scale-[.98]
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-royal/50 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-grad {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl
+           bg-gradient-to-r from-royal to-violet text-white font-semibold text-sm
+           shadow-md hover:shadow-glow hover:scale-[1.03] active:scale-[.97]
+           transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl
+           border-2 border-royal/30 text-royal font-semibold text-sm bg-white
+           hover:bg-sky hover:border-royal active:scale-[.98]
+           transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl
+           text-slate-600 font-medium text-sm
+           hover:bg-slate-100 active:scale-[.98]
+           transition-all duration-200;
+  }
+
+  /* ── Form input ──────────────────────────── */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-xl border border-slate-200 bg-white
+           text-slate-800 placeholder-slate-400 text-sm
+           focus:outline-none focus:ring-2 focus:ring-royal/30 focus:border-royal
+           transition-all duration-200;
+  }
+
+  /* ── Badge ───────────────────────────────── */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+  .badge-blue   { @apply bg-blue-100 text-blue-700; }
+  .badge-green  { @apply bg-emerald-100 text-emerald-700; }
+  .badge-red    { @apply bg-red-100 text-red-700; }
+  .badge-orange { @apply bg-orange-100 text-orange-700; }
+  .badge-violet { @apply bg-violet-100 text-violet-700; }
+  .badge-gold   { @apply bg-amber-100 text-amber-700; }
+
+  /* ── Section heading ─────────────────────── */
+  .section-title {
+    @apply text-lg font-extrabold text-navy;
+  }
+
+  /* ── Sidebar nav item ────────────────────── */
+  .nav-item {
+    @apply flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium
+           transition-all duration-200 text-blue-100/70 hover:bg-white/10 hover:text-white;
+  }
+  .nav-item-active {
+    @apply bg-gradient-to-r from-royal to-violet text-white shadow-violet;
+  }
+
+  /* ── Stat mini-chart line ────────────────── */
+  .mini-line {
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ── Chat bubble ─────────────────────────── */
+  .chat-bubble-ai {
+    @apply rounded-2xl rounded-tl-sm bg-white px-4 py-2.5 text-sm text-slate-700 shadow-card;
+  }
+  .chat-bubble-user {
+    @apply rounded-2xl rounded-tr-sm bg-gradient-to-r from-royal to-violet px-4 py-2.5 text-sm text-white;
+  }
+
+  /* ── Upload drop zone ────────────────────── */
+  .drop-zone {
+    @apply rounded-3xl border-2 border-dashed border-royal/30 bg-blue-50/50
+           px-6 py-10 text-center
+           transition-all duration-300
+           hover:border-royal hover:bg-blue-50 hover:shadow-inner;
+  }
+  .drop-zone-active {
+    @apply border-violet bg-violet/5 shadow-inner;
+  }
+
+  /* ── Placeholder page ────────────────────── */
+  .placeholder-page {
+    @apply flex flex-col items-center justify-center py-20 text-center;
+  }
+
+  /* ── Status badge variants ───────────────── */
+  .status-normal   { @apply bg-emerald-100 text-emerald-700 border border-emerald-200; }
+  .status-abnormal { @apply bg-orange-100 text-orange-700 border border-orange-200; }
+  .status-critical { @apply bg-red-100 text-red-700 border border-red-200; }
+  .status-low      { @apply bg-blue-100 text-blue-700 border border-blue-200; }
+  .status-high     { @apply bg-red-100 text-red-700 border border-red-200; }
+}
+
+/* ========================================================
+   Utility layer
+   ======================================================== */
+@layer utilities {
+
+  /* Text gradient */
+  .text-grad {
+    @apply bg-gradient-to-r from-royal to-violet bg-clip-text text-transparent;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply backdrop-blur-md bg-white/10 ring-1 ring-white/20;
+  }
+
+  /* Animation helpers */
+  .animate-fadeIn   { animation: fadeIn   .5s ease both; }
+  .animate-fadeUp   { animation: fadeUp   .55s ease both; }
+  .animate-scaleIn  { animation: scaleIn  .3s ease both; }
+  .animate-slideDown{ animation: slideDown .35s ease both; }
+  .animate-slideRight{ animation: slideRight .4s ease both; }
+  .animate-draw     { animation: draw 1.6s ease forwards; }
+  .animate-float    { animation: float 3s ease-in-out infinite; }
+  .animate-floatSlow{ animation: float 5s ease-in-out infinite; }
+  .animate-glow     { animation: glow 2.5s ease-in-out infinite; }
+  .animate-ping2    { animation: ping2 1.5s ease-in-out infinite; }
+  .animate-shimmer  { animation: shimmer 2s linear infinite; }
+  .animate-pulse-slow { animation: pulse 3s cubic-bezier(.4,0,.6,1) infinite; }
+
+  /* Stroke animation fill */
+  path.animate-draw, polyline.animate-draw { stroke-dasharray: 1; stroke-dashoffset: 1; }
+}
+
+/* ========================================================
+   Keyframes
+   ======================================================== */
+@keyframes fadeIn     { from { opacity: 0 } to { opacity: 1 } }
+@keyframes fadeUp     { from { opacity: 0; transform: translateY(18px) } to { opacity: 1; transform: none } }
+@keyframes slideDown  { from { opacity: 0; transform: translateY(-10px) } to { opacity: 1; transform: none } }
+@keyframes slideRight { from { opacity: 0; transform: translateX(-14px) } to { opacity: 1; transform: translateX(0) } }
+@keyframes float      { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
+@keyframes draw       { from { stroke-dashoffset: 1 } to { stroke-dashoffset: 0 } }
+@keyframes glow       { 0%,100% { box-shadow: 0 0 0 0 rgba(37,99,235,.2) } 50% { box-shadow: 0 0 24px 6px rgba(37,99,235,.18) } }
+@keyframes ping2      { 0%,100% { transform: scale(1); opacity: 1 } 50% { transform: scale(1.7); opacity: 0 } }
+@keyframes shimmer    { from { background-position: -200% 0 } to { background-position: 200% 0 } }
+@keyframes scaleIn    { from { opacity: 0; transform: scale(.92) } to { opacity: 1; transform: scale(1) } }
+@keyframes pulse      { 0%,100% { opacity: 1 } 50% { opacity: .5 } }

@@ -1,0 +1,18 @@
+# Secrets - never commit
+.env
+.env.*
+backend/.env
+
+# Dependencies and virtual environments
+node_modules/
+.venv/
+python_ai_service/.venv/
+__pycache__/
+
+# Build output and uploads (patient files must never be committed)
+dist/
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Local helper scripts
+push_to_github.bat
